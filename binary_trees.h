@@ -53,4 +53,9 @@ binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 
 
+/* helpers */
+size_t leftdepth(const binary_tree_t *node);
+int is_perfect_rec(const binary_tree_t *tree, size_t depth, size_t height);
+size_t binary_tree_height(const binary_tree_t *tree);
+
 #endif /* BINARY_TREES_H  */
