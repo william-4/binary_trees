@@ -19,19 +19,6 @@ size_t leftdepth(const binary_tree_t *node)
 }
 
 /**
- * binary_tree_is_perfect - checks if a binary tree is perfect
- * @tree: pointer to the root node of the tree to check
- *
- * Return: True if perfect False/0 otherwise.
- */
-int binary_tree_is_perfect(const binary_tree_t *tree)
-{
-	size_t i = leftdepth(tree);
-
-	return (is_perfect_rec(tree, i, 0));
-}
-
-/**
  * is_perfect_rec - recursively checks if binary tree is perfect.
  * @tree: node to check
  * @depth: left nodes depth
@@ -52,4 +39,17 @@ int is_perfect_rec(const binary_tree_t *tree, size_t depth, size_t height)
 
 	return (is_perfect_rec(tree->left, depth, height + 1) &&
 			is_perfect_rec(tree->right, depth, height + 1));
+}
+
+/**
+ * binary_tree_is_perfect - checks if a binary tree is perfect
+ * @tree: pointer to the root node of the tree to check
+ *
+ * Return: True if perfect False/0 otherwise.
+ */
+int binary_tree_is_perfect(const binary_tree_t *tree)
+{
+	size_t i = leftdepth(tree);
+
+	return (is_perfect_rec(tree, i, 0));
 }
